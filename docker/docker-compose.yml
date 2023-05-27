@@ -1,0 +1,17 @@
+# запуск
+# docker-compose -f docker/docker-compose.yml up
+
+
+version: "3.2"
+services:
+  rt_soft__redis:
+    container_name: rt_soft__redis
+    image: "redis:7.0.11"
+    command: redis-server --requirepass my_secure_pass
+    ports:
+      - "6379:6379"
+    # volumes:
+    #   - $PWD/redis-data:/var/lib/redis
+    #   - $PWD/redis.conf:/usr/local/etc/redis/redis.conf
+    # environment:
+    #   - REDIS_REPLICATION_MODE=master
